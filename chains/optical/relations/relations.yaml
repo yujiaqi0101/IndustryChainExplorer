@@ -1,0 +1,142 @@
+# 产业关系（Graph View - 辅助视图）
+#
+# 在 Layered Value Chain 架构中，关系图是第二视图。
+# Layer View 是默认主视图，Graph View 可切换。
+#
+# source/target 使用 layers.yaml 中的条目名称（如 DSP / 光模块）
+# 5 种关系：
+#   Upstream    上游   A 的上游是 B（光模块 Upstream DSP）
+#   Downstream  下游   A 的下游是 B（光模块 Downstream AI服务器）
+#   Supplies    供应   A 供应给 B（DSP Supplies 光模块）
+#   Uses        使用   A 使用 B（800G Uses DSP）
+#   Related     关联   A 关联 B（CPO Related 硅光）
+
+relations:
+  # ============================================================
+  # 上游关系：Upstream（A 的上游是 B）
+  # ============================================================
+  - source: 光模块
+    target: DSP
+    relation: Upstream
+    description: DSP是光模块核心芯片
+    reference:
+      - 国盛证券《光模块行业深度报告》
+      - 中际旭创2024年年报
+
+  - source: 光模块
+    target: EML激光器
+    relation: Upstream
+    description: EML激光器是高速光模块核心光源
+    reference:
+      - 中际旭创2024年年报
+
+  - source: 光模块
+    target: VCSEL
+    relation: Upstream
+    description: VCSEL用于短距光模块
+    reference:
+      - 国盛证券《光模块行业深度报告》
+
+  - source: 光模块
+    target: PCB
+    relation: Upstream
+    description: PCB是光模块基板材料
+    reference:
+      - 国盛证券《光模块行业深度报告》
+
+  - source: 光模块
+    target: 硅光芯片
+    relation: Upstream
+    description: 硅光芯片是下一代光模块方向
+    reference:
+      - Intel《硅光技术白皮书》
+
+  # ============================================================
+  # 下游关系：Downstream（A 的下游是 B）
+  # ============================================================
+  - source: 光模块
+    target: AI服务器
+    relation: Downstream
+    description: AI服务器GPU互联需要光模块
+    reference:
+      - 国盛证券《光模块行业深度报告》
+      - NVIDIA 2024年报
+
+  - source: 光模块
+    target: 交换机
+    relation: Downstream
+    description: 光模块用于交换机端口
+    reference:
+      - 国盛证券《光模块行业深度报告》
+
+  # ============================================================
+  # 供应关系：Supplies（A 供应给 B）
+  # ============================================================
+  - source: DSP
+    target: 光模块
+    relation: Supplies
+    description: DSP芯片供应给光模块
+    reference:
+      - 国盛证券《光模块行业深度报告》
+
+  - source: EML激光器
+    target: 光模块
+    relation: Supplies
+    description: EML激光器供应给光模块
+    reference:
+      - 中际旭创2024年年报
+
+  - source: VCSEL
+    target: 光模块
+    relation: Supplies
+    description: VCSEL供应给光模块
+    reference:
+      - 国盛证券《光模块行业深度报告》
+
+  # ============================================================
+  # 使用关系：Uses（A 使用 B）
+  # ============================================================
+  - source: 800G光模块
+    target: DSP
+    relation: Uses
+    description: 800G光模块使用DSP芯片
+    reference:
+      - 国盛证券《光模块行业深度报告》
+
+  - source: 800G光模块
+    target: EML激光器
+    relation: Uses
+    description: 800G光模块使用EML激光器
+    reference:
+      - 中际旭创2024年年报
+
+  - source: 1.6T光模块
+    target: DSP
+    relation: Uses
+    description: 1.6T光模块使用DSP芯片
+    reference:
+      - 中际旭创2024年年报
+
+  - source: 1.6T光模块
+    target: 硅光芯片
+    relation: Uses
+    description: 1.6T光模块使用硅光技术
+    reference:
+      - Intel《硅光技术白皮书》
+
+  # ============================================================
+  # 关联关系：Related（A 关联 B）
+  # ============================================================
+  - source: CPO
+    target: 硅光芯片
+    relation: Related
+    description: CPO基于硅光技术
+    reference:
+      - Intel《硅光技术白皮书》
+
+  - source: CPO
+    target: 光模块
+    relation: Related
+    description: CPO是光模块下一代演进方向
+    reference:
+      - Intel《硅光技术白皮书》
