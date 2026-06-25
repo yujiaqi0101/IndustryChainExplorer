@@ -112,7 +112,12 @@ python main.py stats
 ### API 模式
 
 ```bash
+# 直接命令
 uvicorn api.app:app --reload
+
+# 或用启动脚本（自动探测 Python）
+bash scripts/start_backend.sh        # bash
+scripts\start_backend.bat            # Windows CMD
 ```
 
 - `GET /layer?chain=optical` - 分层价值链
@@ -125,8 +130,22 @@ uvicorn api.app:app --reload
 ### Streamlit UI
 
 ```bash
+# 直接命令
 streamlit run ui/streamlit/app.py
+
+# 或用启动脚本
+bash scripts/start_frontend.sh       # bash
+scripts\start_frontend.bat           # Windows CMD
 ```
+
+### 一键启动前后端（开发模式）
+
+```bash
+bash scripts/dev.sh                  # bash（Ctrl+C 同停）
+scripts\dev.bat                      # Windows CMD（关窗口同停）
+```
+
+详见 `scripts/README.md`。
 
 ### 测试
 

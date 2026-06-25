@@ -1,5 +1,7 @@
 # Industry Explorer 产业链浏览器依赖
 pyyaml>=6.0
+pydantic>=2.5
+networkx>=3.0
 streamlit>=1.28
 fastapi>=0.104
 uvicorn>=0.24

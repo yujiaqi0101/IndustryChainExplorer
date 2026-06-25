@@ -1,0 +1,56 @@
+# supply 关系（from/to/type/references）
+- id: rel_0001
+  from: dsp
+  to: optical_module
+  type: supply
+  description: DSP芯片供应给光模块，是光模块核心芯片。
+  references:
+    - gs_optical_2025
+    - zjxc_2024_annual
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0002
+  from: eml_laser
+  to: optical_module
+  type: supply
+  description: EML激光器供应给光模块，是高速光模块核心光源。
+  references:
+    - zjxc_2024_annual
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0003
+  from: vcsel
+  to: optical_module
+  type: supply
+  description: VCSEL供应给光模块，用于短距光模块。
+  references:
+    - gs_optical_2025
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0004
+  from: pcb
+  to: optical_module
+  type: supply
+  description: PCB是光模块基板材料。
+  references:
+    - gs_optical_2025
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0005
+  from: silicon_photonics_chip
+  to: optical_module
+  type: supply
+  description: 硅光芯片是下一代光模块方向。
+  references:
+    - intel_silicon_photonics_wp
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0006
+  from: tf_comm
+  to: zhongji_innolight
+  type: supply
+  description: 天孚通信光器件封装上游供应中际旭创。
+  references:
+    - gs_optical_2025
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'

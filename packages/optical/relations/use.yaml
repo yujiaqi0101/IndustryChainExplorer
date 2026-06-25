@@ -1,0 +1,56 @@
+# use 关系（from/to/type/references）
+- id: rel_0101
+  from: ai_server
+  to: optical_module
+  type: use
+  description: AI服务器GPU互联需要光模块。
+  references:
+    - gs_optical_2025
+    - nvidia_2024_annual
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0102
+  from: switch
+  to: optical_module
+  type: use
+  description: 交换机端口使用光模块。
+  references:
+    - gs_optical_2025
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0103
+  from: optical_module_800g
+  to: dsp
+  type: use
+  description: 800G光模块使用DSP芯片。
+  references:
+    - gs_optical_2025
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0104
+  from: optical_module_800g
+  to: eml_laser
+  type: use
+  description: 800G光模块使用EML激光器。
+  references:
+    - zjxc_2024_annual
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0105
+  from: optical_module_1_6t
+  to: dsp
+  type: use
+  description: 1.6T光模块使用DSP芯片。
+  references:
+    - gs_optical_2025
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0106
+  from: optical_module_1_6t
+  to: silicon_photonics_chip
+  type: use
+  description: 1.6T光模块使用硅光技术。
+  references:
+    - intel_silicon_photonics_wp
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'

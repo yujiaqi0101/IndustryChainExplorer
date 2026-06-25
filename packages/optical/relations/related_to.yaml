@@ -1,0 +1,28 @@
+# related_to 关系（from/to/type/references）
+- id: rel_0301
+  from: cpo
+  to: silicon_photonics_chip
+  type: related_to
+  description: CPO基于硅光技术。
+  references:
+    - intel_silicon_photonics_wp
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0302
+  from: cpo
+  to: optical_module
+  type: related_to
+  description: CPO是光模块下一代演进方向。
+  references:
+    - intel_silicon_photonics_wp
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+- id: rel_0303
+  from: silicon_photonics_chip
+  to: silicon_photonics
+  type: related_to
+  description: 硅光芯片是硅光技术的载体。
+  references:
+    - intel_silicon_photonics_wp
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'

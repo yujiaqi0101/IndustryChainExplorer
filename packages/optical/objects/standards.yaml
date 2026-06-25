@@ -1,0 +1,22 @@
+# 标准对象（kind: standard）
+# 体现 standard kind 的用途
+
+- id: ieee_802_3bs
+  kind: standard
+  name: IEEE 802.3bs
+  aliases:
+    - 400GbE
+  summary: IEEE 400Gb以太网标准，定义400G光模块规格。
+  tags: [标准, 以太网, 400G]
+  created_at: "2026-01-01"
+  updated_at: "2026-01-01"
+
+- id: oif_224g
+  kind: standard
+  name: OIF-224G
+  aliases:
+    - OIF CEI-224G
+  summary: OIF 224G共封装接口标准，下一代高速互连关键标准。
+  tags: [标准, 224G, 互连]
+  created_at: "2026-01-01"
+  updated_at: "2026-01-01"

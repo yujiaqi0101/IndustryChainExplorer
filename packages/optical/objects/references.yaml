@@ -1,0 +1,36 @@
+- id: gs_optical_2025
+  kind: reference
+  name: 国盛证券光模块深度报告
+  title: 光模块行业深度报告
+  author: 国盛证券
+  summary: 覆盖光模块完整价值链的行业深度研究报告。
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+  published_date: '2025'
+- id: zjxc_2024_annual
+  kind: reference
+  name: 中际旭创2024年年报
+  title: 中际旭创股份有限公司2024年年度报告
+  author: 中际旭创
+  summary: 中际旭创2024年度报告，含光模块业务披露。
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+  published_date: '2024'
+- id: nvidia_2024_annual
+  kind: reference
+  name: NVIDIA 2024年报
+  title: NVIDIA Corporation Fiscal 2024 Annual Report
+  author: NVIDIA
+  summary: NVIDIA年报，含AI服务器GPU互联需求披露。
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+  published_date: '2024'
+- id: intel_silicon_photonics_wp
+  kind: reference
+  name: Intel硅光技术白皮书
+  title: Silicon Photonics Technology White Paper
+  author: Intel
+  summary: Intel硅光技术与CPO方向白皮书。
+  created_at: '2026-01-01'
+  updated_at: '2026-01-01'
+  published_date: '2024'

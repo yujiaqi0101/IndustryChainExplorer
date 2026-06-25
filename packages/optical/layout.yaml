@@ -1,0 +1,39 @@
+# 分层布局（PRD Part 06 第十节）
+# Layout 是配置：sections 映射层 → 对象ID列表
+# order 越大越上游（材料层 order=3 是最上游）
+# 对象本身不感知自己属于哪层，分层只是渲染配置
+
+sections:
+  - id: application
+    title: 应用层
+    order: 0
+    object_ids:
+      - ai_server
+      - data_center
+      - switch
+
+  - id: system
+    title: 系统层
+    order: 1
+    object_ids:
+      - optical_module
+      - optical_module_800g
+      - optical_module_1_6t
+      - cpo
+
+  - id: component
+    title: 器件层
+    order: 2
+    object_ids:
+      - dsp
+      - eml_laser
+      - vcsel
+      - silicon_photonics_chip
+
+  - id: material
+    title: 材料层
+    order: 3
+    object_ids:
+      - silicon_wafer
+      - pcb
+      - quartz
