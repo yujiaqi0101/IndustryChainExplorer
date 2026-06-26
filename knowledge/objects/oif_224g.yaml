@@ -1,0 +1,10 @@
+id: oif_224g
+kind: document
+name: OIF-224G
+aliases:
+  - OIF CEI-224G
+summary: OIF 224G共封装接口标准，下一代高速互连关键标准。
+document_type: standard
+tags: [标准, 224G, 互连, CPO, OIF]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

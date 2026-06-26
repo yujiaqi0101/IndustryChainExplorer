@@ -1,0 +1,8 @@
+id: fact_00012
+subject: silicon_photonics
+predicate: is_a
+object: technology
+statement: 硅光是硅基光电子集成技术。
+citations: [intel_silicon_photonics_wp]
+created_at: "2026-06-26"
+updated_at: "2026-06-26"

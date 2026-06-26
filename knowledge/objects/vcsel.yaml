@@ -1,0 +1,10 @@
+id: vcsel
+kind: concept
+name: VCSEL
+aliases:
+  - Vertical-Cavity Surface-Emitting Laser
+  - 垂直腔面发射激光器
+summary: 垂直腔面发射激光器，短距光模块光源，多用于多模光纤场景。
+tags: [光器件, 激光器]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

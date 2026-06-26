@@ -1,0 +1,9 @@
+id: switch
+kind: concept
+name: 交换机
+aliases:
+  - Switch
+summary: 高速网络交换机，光模块下游应用，端口插拔光模块实现互联。
+tags: [通信, 数据中心, 网络]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

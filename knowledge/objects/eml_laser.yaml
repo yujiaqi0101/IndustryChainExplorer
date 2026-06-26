@@ -1,0 +1,11 @@
+id: eml_laser
+kind: concept
+name: EML激光器
+aliases:
+  - EML
+  - Electro-absorption Modulated Laser
+  - 电吸收调制激光器
+summary: 电吸收调制激光器，高速光模块核心光源，用于中长距高速传输。
+tags: [光器件, 激光器, 上游]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

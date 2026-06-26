@@ -1,0 +1,12 @@
+id: huagong_tech
+kind: organization
+name: 华工科技
+aliases:
+  - Huagong Tech
+summary: 激光器与光通信设备供应商。
+organization_type: company
+code: "000988"
+market: SZ
+tags: [光模块, 激光器]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

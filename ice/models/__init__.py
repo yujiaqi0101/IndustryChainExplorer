@@ -1,18 +1,38 @@
-"""领域模型（PRD Part 06 第一~七节）。"""
-
-from .object import Object, ObjectKind, EntityType, validate_object_id
-from .relation import Relation, RelationType
-from .layout import Layout, Section
-from .package import Package
+from .errors import (
+    BusinessError,
+    KnowledgeError,
+    OntologyError,
+    QualityWarning,
+    ReferenceError,
+    SchemaError,
+)
+from .fact import Fact, validate_fact_id
+from .graph import Edge, KnowledgeGraph
+from .object import Object, ObjectKind, validate_object_id
+from .ontology import Ontology, PredicateDefinition, TaxonomyCategory
+from .package import LayerConfig, Package
+from .validation import IssueSeverity, ValidationIssue, ValidationReport
 
 __all__ = [
+    "Fact",
+    "validate_fact_id",
+    "KnowledgeGraph",
+    "Edge",
     "Object",
     "ObjectKind",
-    "EntityType",
     "validate_object_id",
-    "Relation",
-    "RelationType",
-    "Layout",
-    "Section",
+    "Ontology",
+    "PredicateDefinition",
+    "TaxonomyCategory",
     "Package",
+    "LayerConfig",
+    "ValidationIssue",
+    "ValidationReport",
+    "IssueSeverity",
+    "KnowledgeError",
+    "SchemaError",
+    "OntologyError",
+    "ReferenceError",
+    "BusinessError",
+    "QualityWarning",
 ]

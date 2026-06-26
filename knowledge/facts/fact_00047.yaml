@@ -1,0 +1,8 @@
+id: fact_00047
+subject: silicon_photonics_chip
+predicate: related_to
+object: silicon_photonics
+statement: 硅光芯片是硅光技术的载体。
+citations: [intel_silicon_photonics_wp]
+created_at: "2026-06-26"
+updated_at: "2026-06-26"

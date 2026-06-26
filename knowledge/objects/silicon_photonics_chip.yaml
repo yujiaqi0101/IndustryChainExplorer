@@ -1,0 +1,9 @@
+id: silicon_photonics_chip
+kind: concept
+name: 硅光芯片
+aliases:
+  - Silicon Photonics Chip
+summary: 硅基光电子集成芯片，将光器件集成在硅基底上，是下一代光模块核心技术方向。
+tags: [硅光, 芯片, 技术, 下一代]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

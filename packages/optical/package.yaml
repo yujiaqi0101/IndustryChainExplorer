@@ -1,10 +1,37 @@
-# 光模块产业包元信息（PRD Part 06 第九节）
+id: optical
 name: 光模块产业链
-industry: 光模块
-description: 光模块是光通信核心器件，实现光电信号转换。本产业包覆盖光模块完整价值链。
+version: "2.0.0"
+description: 光模块是光通信核心器件，实现光电信号转换。本产业包覆盖光模块完整价值链，从上游材料/器件到下游AI服务器/数据中心应用。
+entry_points:
+  - optical_module
+default_layout: layered
+theme: blue
 keywords:
   - AI
   - 算力
   - 通信
   - 800G
-  - 海外
+  - 1.6T
+  - 光模块
+  - 硅光
+layers:
+  - id: application
+    name: 应用层
+    categories: [ai_infra, application]
+    order: 4
+  - id: product
+    name: 产品层
+    categories: [product]
+    order: 3
+  - id: component
+    name: 器件层
+    categories: [component]
+    order: 2
+  - id: material
+    name: 材料层
+    categories: [material]
+    order: 1
+  - id: technology
+    name: 技术层
+    categories: [technology]
+    order: 0

@@ -1,0 +1,13 @@
+id: fii
+kind: organization
+name: 工业富联
+aliases:
+  - Foxconn Industrial Internet
+  - FII
+summary: AI服务器代工龙头，英伟达供应链核心企业。
+organization_type: company
+code: "601138"
+market: SH
+tags: [AI服务器, 算力, 代工]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

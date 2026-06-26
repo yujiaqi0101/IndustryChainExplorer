@@ -1,0 +1,10 @@
+id: ber
+kind: concept
+name: BER
+aliases:
+  - Bit Error Rate
+  - 误码率
+summary: 误码率，衡量光模块传输质量的关键指标。
+tags: [指标, 质量]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

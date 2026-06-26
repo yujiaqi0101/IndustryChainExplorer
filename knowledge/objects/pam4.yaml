@@ -1,0 +1,10 @@
+id: pam4
+kind: concept
+name: PAM4
+aliases:
+  - 4-level Pulse Amplitude Modulation
+  - 四电平脉冲幅度调制
+summary: 四电平脉冲幅度调制技术，高速光模块核心调制技术，每符号传输2比特。
+tags: [调制, 高速, 技术]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

@@ -1,0 +1,9 @@
+id: ai_server
+kind: concept
+name: AI服务器
+aliases:
+  - AI Server
+summary: AI训练/推理服务器，光模块下游应用，GPU互联需要高速光模块。
+tags: [AI, 算力, GPU]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

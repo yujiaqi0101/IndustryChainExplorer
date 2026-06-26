@@ -1,0 +1,8 @@
+id: fact_00007
+subject: cpo
+predicate: is_a
+object: technology
+statement: CPO（共封装光学）是下一代光互连技术。
+citations: [intel_silicon_photonics_wp]
+created_at: "2026-06-26"
+updated_at: "2026-06-26"

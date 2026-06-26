@@ -1,0 +1,11 @@
+id: intel_silicon_photonics_wp
+kind: document
+name: Intel硅光技术白皮书
+title: Silicon Photonics Technology White Paper
+author: Intel
+summary: Intel硅光技术与CPO方向技术白皮书。
+document_type: white_paper
+tags: [白皮书, 硅光, CPO, Intel]
+published_date: "2024"
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

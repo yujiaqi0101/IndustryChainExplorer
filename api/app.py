@@ -1,41 +1,21 @@
-"""Industry Layer Explorer API（Layered Value Chain 分层价值链）。
+"""Industry Knowledge OS API (v2.0 - Knowledge-centric Architecture).
 
-核心模型是 Layer（层），不是 Tree 也不是 Graph。
+Knowledge OS v2.0: Knowledge (Objects/Facts) → Presentation (Packages/Layers) → Application (Loader/Indexer/Graph)
 
-视图优先级：
-    Layer View（默认主视图）- /layer
-    Graph View（辅助视图）- /graph
+Endpoints:
+    GET  /                          Service info
+    GET  /stats                     Knowledge repository statistics
+    GET  /validate                  Validation report
+    GET  /search?q=关键词            Search objects by keyword
+    GET  /objects                   List all objects
+    GET  /objects/{object_id}       Get object detail
+    GET  /facts                     List all facts
+    GET  /facts/{fact_id}           Get fact detail
+    GET  /neighbors/{object_id}     Get graph neighbors (relationships)
+    GET  /packages                  List all packages/views
+    GET  /packages/{package_id}     Get package/view detail
 
-接口：
-    GET  /                          服务信息
-    GET  /stats                     数据统计
-    GET  /search?q=光               搜索
-    GET  /chains                    产业包列表
-    GET  /items                     所有条目
-    GET  /layer                     分层价值链（主视图）
-        ?chain=optical              指定产业包
-    GET  /detail/{name}             条目详情（基于 Layer）
-        ?show_companies=true        公司模式
-    GET  /graph/{name}              关系图（辅助视图）
-        ?depth=2                    展开深度
-        ?show_companies=true        公司模式
-    GET  /glossary                  名词解释
-        ?chain=optical              指定产业包
-    GET  /tags                      所有标签
-    GET  /tags/{tag}                按标签查找
-    GET  /hot                       热门产业
-
-    GET  /user/data                 用户数据全部
-    GET  /user/favorites            收藏列表
-    POST /user/favorites/{node_id}  添加收藏
-    DELETE /user/favorites/{node_id} 取消收藏
-    GET  /user/notes/{node_id}      获取笔记
-    POST /user/notes/{node_id}      保存笔记
-    GET  /user/recent               最近浏览
-    GET  /user/paths                知识路径列表
-    POST /user/paths                保存知识路径
-
-启动：
+Launch:
     uvicorn api.app:app --reload
 """
 
@@ -46,213 +26,243 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query
-from pydantic import BaseModel
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from repository import ChainRepository
-from search import Searcher
-from services import ExplorerService, UserDataStore
+from ice.repository import KnowledgeRepository
 
-CHAINS_DIR = ROOT / "chains"
-USER_DATA_PATH = ROOT / "data" / "user_data.json"
+repo = KnowledgeRepository(ROOT)
+validation_report = repo.load(strict=False)
 
-_repo = ChainRepository(CHAINS_DIR)
-_chain_map = _repo.load()
-_explorer = ExplorerService(_chain_map)
-_searcher = Searcher(_chain_map)
-_user_data = UserDataStore(USER_DATA_PATH)
-
-app = FastAPI(title="Industry Layer Explorer API", version="5.0")
+app = FastAPI(title="Industry Knowledge OS API", version="2.0.0")
 
 
-# ======================================================================
-# 浏览接口
-# ======================================================================
+def _serialize_obj(obj) -> dict[str, Any]:
+    return {
+        "id": obj.id,
+        "kind": obj.kind.value,
+        "name": obj.name,
+        "aliases": obj.aliases,
+        "summary": obj.summary,
+        "tags": obj.tags,
+        "deprecated_ids": obj.deprecated_ids,
+    }
+
+
+def _serialize_fact(fact) -> dict[str, Any]:
+    result = {
+        "id": fact.id,
+        "subject": fact.subject,
+        "predicate": fact.predicate,
+        "object": fact.object,
+        "statement": fact.statement,
+        "qualifiers": fact.qualifiers,
+        "citations": fact.citations,
+        "weight": fact.weight,
+    }
+    if fact.subject_ref:
+        result["subject_name"] = fact.subject_ref.name
+    if fact.object_ref:
+        result["object_name"] = fact.object_ref.name
+    return result
+
+
 @app.get("/")
 def root() -> dict:
-    return {"service": "Industry Layer Explorer", "version": "5.0"}
+    return {
+        "service": "Industry Knowledge OS",
+        "version": "2.0.0",
+        "architecture": "knowledge-centric",
+        "validation": {
+            "errors": validation_report.error_count(),
+            "warnings": validation_report.warning_count(),
+            "quality_score": validation_report.quality_score(),
+        }
+    }
 
 
 @app.get("/stats")
 def stats() -> dict:
-    return _explorer.stats()
+    return repo.stats()
+
+
+@app.get("/validate")
+def validate() -> dict:
+    return {
+        "errors": validation_report.error_count(),
+        "warnings": validation_report.warning_count(),
+        "infos": validation_report.info_count(),
+        "quality_score": validation_report.quality_score(),
+        "issues": [str(i) for i in validation_report.issues],
+    }
 
 
 @app.get("/search")
-def search(q: str = Query(..., description="关键词")) -> dict:
-    results = _searcher.search(q)
-    return {"query": q, "count": len(results), "results": [r.to_dict() for r in results]}
+def search(q: str = Query(..., description="Search keyword")) -> dict:
+    results = repo.search(q)
+    return {
+        "query": q,
+        "count": len(results),
+        "results": [_serialize_obj(obj) for obj in results]
+    }
 
 
-@app.get("/chains")
-def list_chains() -> dict:
-    """产业包列表。"""
-    return {"chains": _explorer.list_chains()}
-
-
-@app.get("/items")
-def list_items() -> dict:
-    """所有条目（跨产业包）。"""
-    return {"items": _explorer.list_all_items()}
-
-
-@app.get("/layer")
-def layer_view(chain: str | None = Query(None, description="产业包名")) -> dict:
-    """分层价值链（默认主视图）。
-
-    从 layers.yaml 加载的分层视图，一眼看清整个产业。
-    每个产业自定义层数（光模块4层，机器人5层，半导体6层）。
-    """
-    return {"chains": _explorer.layer_view(chain)}
-
-
-@app.get("/detail/{name}")
-def get_detail(
-    name: str,
-    show_companies: bool = Query(False, description="公司模式（显示公司）"),
+@app.get("/objects")
+def list_objects(
+    kind: str | None = Query(None, description="Filter by kind (concept/organization/document)"),
+    tag: str | None = Query(None, description="Filter by tag"),
 ) -> dict:
-    """条目详情（基于 Layer）。
+    objects = list(repo.all_objects().values())
+    if kind:
+        objects = [o for o in objects if o.kind.value == kind]
+    if tag:
+        objects = [o for o in objects if tag in o.tags]
+    return {
+        "count": len(objects),
+        "objects": [_serialize_obj(obj) for obj in objects]
+    }
 
-    展示：所在层、同层条目、上游层、下游层、关联公司（公司模式）。
-    """
-    result = _explorer.get_detail(name, show_companies=show_companies)
-    if result is None:
-        raise HTTPException(status_code=404, detail=f"未找到: {name}")
+
+@app.get("/objects/{object_id}")
+def get_object(object_id: str) -> dict:
+    obj = repo.get_object(object_id)
+    if obj is None:
+        resolved = repo.resolve_id(object_id)
+        if resolved:
+            obj = repo.get_object(resolved)
+    if obj is None:
+        raise HTTPException(status_code=404, detail=f"Object not found: {object_id}")
+
+    neighbors = []
+    for nbr, fact, outgoing in repo.graph.neighbors(obj.id):
+        neighbors.append({
+            "direction": "outgoing" if outgoing else "incoming",
+            "predicate": fact.predicate,
+            "object": _serialize_obj(nbr),
+            "fact_id": fact.id,
+        })
+
+    result = _serialize_obj(obj)
+    result["neighbors"] = neighbors
+    result["neighbor_count"] = len(neighbors)
     return result
 
 
-@app.get("/graph/{name}")
-def graph_data(
-    name: str,
-    depth: int = Query(1, ge=1, le=3, description="展开深度"),
-    show_companies: bool = Query(False, description="公司模式（显示公司）"),
+@app.get("/facts")
+def list_facts(
+    predicate: str | None = Query(None, description="Filter by predicate"),
+    subject: str | None = Query(None, description="Filter by subject ID"),
+    object: str | None = Query(None, description="Filter by object ID"),
 ) -> dict:
-    """关系图数据（辅助视图，vis-network 格式）。
-
-    基于 relations.yaml 构建 Graph。
-    """
-    result = _explorer.graph_data(name, depth=depth, show_companies=show_companies)
-    if result is None:
-        raise HTTPException(status_code=404, detail=f"未找到: {name}")
-    return result
-
-
-@app.get("/glossary")
-def glossary(chain: str | None = Query(None, description="产业包名")) -> dict:
-    """名词解释（glossary.yaml）。"""
-    return {"terms": _explorer.glossary(chain)}
+    facts = list(repo.all_facts().values())
+    if predicate:
+        facts = [f for f in facts if f.predicate == predicate]
+    if subject:
+        facts = [f for f in facts if f.subject == subject]
+    if object:
+        facts = [f for f in facts if f.object == object]
+    return {
+        "count": len(facts),
+        "facts": [_serialize_fact(f) for f in facts]
+    }
 
 
-@app.get("/tags")
-def list_tags() -> dict:
-    """所有标签。"""
-    return {"tags": _explorer.list_all_tags()}
+@app.get("/facts/{fact_id}")
+def get_fact(fact_id: str) -> dict:
+    fact = repo.get_fact(fact_id)
+    if fact is None:
+        raise HTTPException(status_code=404, detail=f"Fact not found: {fact_id}")
+    return _serialize_fact(fact)
 
 
-@app.get("/tags/{tag}")
-def search_by_tag(tag: str) -> dict:
-    """按标签查找条目。"""
-    results = _explorer.search_by_tag(tag)
-    return {"tag": tag, "count": len(results), "results": results}
+@app.get("/neighbors/{object_id}")
+def get_neighbors(
+    object_id: str,
+    direction: str = Query("both", description="Direction: both/outgoing/incoming"),
+) -> dict:
+    obj = repo.get_object(object_id)
+    if obj is None:
+        resolved = repo.resolve_id(object_id)
+        if resolved:
+            obj = repo.get_object(resolved)
+            object_id = resolved
+    if obj is None:
+        raise HTTPException(status_code=404, detail=f"Object not found: {object_id}")
+
+    neighbors = []
+    if direction in ("both", "outgoing"):
+        for nbr, fact in repo.graph.outgoing(object_id):
+            neighbors.append({
+                "direction": "outgoing",
+                "predicate": fact.predicate,
+                "object": _serialize_obj(nbr),
+                "fact_id": fact.id,
+                "statement": fact.statement,
+            })
+    if direction in ("both", "incoming"):
+        for nbr, fact in repo.graph.incoming(object_id):
+            neighbors.append({
+                "direction": "incoming",
+                "predicate": fact.predicate,
+                "object": _serialize_obj(nbr),
+                "fact_id": fact.id,
+                "statement": fact.statement,
+            })
+
+    return {
+        "object": _serialize_obj(obj),
+        "count": len(neighbors),
+        "neighbors": neighbors,
+    }
 
 
-@app.get("/hot")
-def hot_industries(limit: int = Query(10, ge=1, le=50)) -> dict:
-    """热门产业。"""
-    return {"industries": _explorer.hot_industries(limit)}
+@app.get("/packages")
+def list_packages() -> dict:
+    packages = repo.all_packages()
+    return {
+        "count": len(packages),
+        "packages": [
+            {
+                "id": pkg.id,
+                "name": pkg.name,
+                "version": pkg.version,
+                "description": pkg.description,
+                "entry_points": pkg.entry_points,
+                "layers": [
+                    {"id": layer.id, "name": layer.name, "order": layer.order}
+                    for layer in pkg.layers
+                ],
+            }
+            for pkg in packages.values()
+        ]
+    }
 
 
-# ======================================================================
-# 用户数据接口（收藏/笔记/最近浏览/知识路径）
-# ======================================================================
-@app.get("/user/data")
-def user_data_all() -> dict:
-    """用户数据全部。"""
-    return _user_data.all()
+@app.get("/packages/{package_id}")
+def get_package(package_id: str) -> dict:
+    pkg = repo.get_package(package_id)
+    if pkg is None:
+        raise HTTPException(status_code=404, detail=f"Package not found: {package_id}")
 
-
-# -- 收藏 -------------------------------------------------------------
-@app.get("/user/favorites")
-def list_favorites() -> dict:
-    return {"favorites": _user_data.list_favorites()}
-
-
-@app.post("/user/favorites/{node_id}")
-def add_favorite(node_id: str) -> dict:
-    _user_data.add_favorite(node_id)
-    return {"id": node_id, "favorite": True}
-
-
-@app.delete("/user/favorites/{node_id}")
-def remove_favorite(node_id: str) -> dict:
-    _user_data.remove_favorite(node_id)
-    return {"id": node_id, "favorite": False}
-
-
-# -- 笔记 -------------------------------------------------------------
-@app.get("/user/notes/{node_id}")
-def get_note(node_id: str) -> dict:
-    return {"id": node_id, "note": _user_data.get_note(node_id)}
-
-
-class NoteBody(BaseModel):
-    text: str
-
-
-@app.post("/user/notes/{node_id}")
-def set_note(node_id: str, body: NoteBody) -> dict:
-    _user_data.set_note(node_id, body.text)
-    return {"id": node_id, "note": body.text}
-
-
-# -- 最近浏览 ---------------------------------------------------------
-@app.get("/user/recent")
-def list_recent(limit: int = Query(20, ge=1, le=100)) -> dict:
-    return {"recent": _user_data.list_recent(limit)}
-
-
-class RecentBody(BaseModel):
-    id: str
-    name: str
-    type: str
-
-
-@app.post("/user/recent")
-def add_recent(body: RecentBody) -> dict:
-    _user_data.add_recent(body.id, body.name, body.type)
-    return {"ok": True}
-
-
-# -- 知识路径 ---------------------------------------------------------
-@app.get("/user/paths")
-def list_paths() -> dict:
-    return {"paths": _user_data.list_paths()}
-
-
-class PathNode(BaseModel):
-    id: str
-    name: str
-    type: str
-
-
-class PathBody(BaseModel):
-    name: str
-    trail: list[PathNode]
-
-
-@app.post("/user/paths")
-def save_path(body: PathBody) -> dict:
-    path_id = _user_data.save_path(
-        body.name,
-        [n.model_dump() for n in body.trail],
-    )
-    return {"id": path_id, "ok": True}
-
-
-@app.delete("/user/paths/{path_id}")
-def delete_path(path_id: str) -> dict:
-    _user_data.delete_path(path_id)
-    return {"ok": True}
+    return {
+        "id": pkg.id,
+        "name": pkg.name,
+        "version": pkg.version,
+        "description": pkg.description,
+        "entry_points": pkg.entry_points,
+        "layers": [
+            {
+                "id": layer.id,
+                "name": layer.name,
+                "categories": layer.categories,
+                "order": layer.order,
+                "object_ids": [
+                    oid for oid, obj in repo.all_objects().items()
+                    if any(c in obj.tags for c in layer.categories)
+                ],
+            }
+            for layer in pkg.layers
+        ],
+    }

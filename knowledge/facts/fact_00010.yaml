@@ -1,0 +1,8 @@
+id: fact_00010
+subject: vcsel
+predicate: is_a
+object: component
+statement: VCSEL垂直腔面发射激光器是短距光模块光源器件。
+citations: [gs_optical_2025]
+created_at: "2026-06-26"
+updated_at: "2026-06-26"

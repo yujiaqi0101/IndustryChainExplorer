@@ -1,0 +1,12 @@
+id: coherent
+kind: organization
+name: Coherent
+aliases:
+  - Coherent Corp.
+summary: 海外光器件公司，EML激光器供应商。
+organization_type: company
+code: COHR
+market: US
+tags: [激光器, EML, 海外, 光器件]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

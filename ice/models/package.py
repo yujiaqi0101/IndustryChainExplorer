@@ -1,38 +1,31 @@
-"""Package 模型（PRD Part 06 第九节）。
-
-Package 是产业视图容器，聚合 objects + relations + layout。
-"""
-
 from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, field_validator
 
-from .layout import Layout
-from .object import Object, validate_object_id
-from .relation import Relation
+from .object import validate_object_id
 
 
-class Package(BaseModel):
-    """产业包。
-
-    dir_name 是磁盘目录名（也是 Package ID）。
-    objects/relations/layout 是加载后的领域对象。
-    readme 是 README.md 原文。
-    """
-
-    model_config = ConfigDict(extra="forbid", arbitrary_types_allowed=True)
+class LayerConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid")
 
     id: str
     name: str
-    industry: str = ""
-    description: str = ""
-    version: str = "1.0.0"
-    keywords: list[str] = []
+    categories: list[str] = []
+    order: int = 0
 
-    objects: list[Object] = []
-    relations: list[Relation] = []
-    layout: Layout | None = None
-    readme: str = ""
+
+class Package(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: str
+    name: str
+    version: str = "1.0.0"
+    description: str = ""
+    entry_points: list[str] = []
+    default_layout: str = "layered"
+    layers: list[LayerConfig] = []
+    theme: str = "blue"
+    keywords: list[str] = []
     dir_name: str = ""
 
     @field_validator("id")
@@ -40,16 +33,12 @@ class Package(BaseModel):
     def _validate_id(cls, v: str) -> str:
         return validate_object_id(v)
 
-    def object_ids(self) -> list[str]:
-        return [o.id for o in self.objects]
+    @field_validator("entry_points")
+    @classmethod
+    def _validate_entry_points(cls, v: list[str]) -> list[str]:
+        for eid in v:
+            validate_object_id(eid)
+        return v
 
-    def get_object(self, object_id: str) -> Object | None:
-        return next((o for o in self.objects if o.id == object_id), None)
-
-    def relations_of(self, object_id: str) -> list[Relation]:
-        return [r for r in self.relations if r.from_ == object_id or r.to == object_id]
-
-    def section_of(self, object_id: str):
-        if self.layout is None:
-            return None
-        return self.layout.section_of(object_id)
+    def ordered_layers(self) -> list[LayerConfig]:
+        return sorted(self.layers, key=lambda l: l.order)

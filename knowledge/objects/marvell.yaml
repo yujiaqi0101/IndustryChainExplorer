@@ -1,0 +1,12 @@
+id: marvell
+kind: organization
+name: Marvell
+aliases:
+  - Marvell Technology
+summary: 海外半导体公司，DSP芯片核心供应商。
+organization_type: company
+code: MRVL
+market: US
+tags: [DSP, 芯片, 海外, 半导体]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

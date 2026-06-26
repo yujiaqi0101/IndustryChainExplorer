@@ -1,0 +1,8 @@
+id: fact_00041
+subject: optical_module_800g
+predicate: use
+object: dsp
+statement: 800G光模块使用DSP芯片。
+citations: [gs_optical_2025]
+created_at: "2026-06-26"
+updated_at: "2026-06-26"

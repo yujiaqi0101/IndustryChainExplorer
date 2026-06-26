@@ -1,0 +1,101 @@
+categories:
+  industry:
+    name: 产业
+    parent: null
+  communication:
+    name: 通信
+    parent: industry
+  optical_communication:
+    name: 光通信
+    parent: communication
+  ai_infra:
+    name: AI基础设施
+    parent: industry
+
+  technology:
+    name: 技术
+    parent: null
+  modulation:
+    name: 调制技术
+    parent: technology
+  packaging:
+    name: 封装技术
+    parent: technology
+
+  component:
+    name: 器件
+    parent: null
+  semiconductor:
+    name: 半导体器件
+    parent: component
+  optical_component:
+    name: 光器件
+    parent: component
+  electronic_component:
+    name: 电子器件
+    parent: component
+
+  material:
+    name: 材料
+    parent: null
+  optical_material:
+    name: 光学材料
+    parent: material
+  semiconductor_material:
+    name: 半导体材料
+    parent: material
+
+  product:
+    name: 产品
+    parent: null
+  optical_module:
+    name: 光模块
+    parent: product
+  optical_transceiver:
+    name: 光收发器
+    parent: product
+  chip:
+    name: 芯片
+    parent: product
+
+  application:
+    name: 应用
+    parent: null
+  data_center:
+    name: 数据中心
+    parent: application
+  ai_server:
+    name: AI服务器
+    parent: application
+  telecom:
+    name: 电信网络
+    parent: application
+
+  organization_type:
+    name: 组织类型
+    parent: null
+  company:
+    name: 公司
+    parent: organization_type
+  research_institute:
+    name: 研究机构
+    parent: organization_type
+  standard_organization:
+    name: 标准组织
+    parent: organization_type
+
+  document_type:
+    name: 文献类型
+    parent: null
+  research_report:
+    name: 研究报告
+    parent: document_type
+  annual_report:
+    name: 年报
+    parent: document_type
+  standard:
+    name: 标准文档
+    parent: document_type
+  white_paper:
+    name: 白皮书
+    parent: document_type

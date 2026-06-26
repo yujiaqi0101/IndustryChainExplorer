@@ -1,0 +1,10 @@
+id: ieee_802_3bs
+kind: document
+name: IEEE 802.3bs
+aliases:
+  - 400GbE
+summary: IEEE 400Gb以太网标准，定义400G光模块技术规格。
+document_type: standard
+tags: [标准, 以太网, 400G, IEEE]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

@@ -1,0 +1,12 @@
+id: intel
+kind: organization
+name: Intel
+aliases:
+  - Intel Corporation
+summary: 半导体巨头，硅光芯片核心供应商。
+organization_type: company
+code: INTC
+market: US
+tags: [硅光, 芯片, 海外, 半导体]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

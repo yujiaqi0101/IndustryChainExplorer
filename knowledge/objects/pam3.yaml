@@ -1,0 +1,10 @@
+id: pam3
+kind: concept
+name: PAM3
+aliases:
+  - 3-level Pulse Amplitude Modulation
+  - 三电平脉冲幅度调制
+summary: 三电平脉冲幅度调制技术，用于部分短距互连场景。
+tags: [调制, 技术]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"

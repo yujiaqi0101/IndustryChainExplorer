@@ -1,0 +1,10 @@
+id: fec
+kind: concept
+name: FEC
+aliases:
+  - Forward Error Correction
+  - 前向纠错
+summary: 前向纠错技术，光模块通过冗余编码降低传输误码率。
+tags: [纠错, 技术]
+created_at: "2026-01-01"
+updated_at: "2026-06-26"
