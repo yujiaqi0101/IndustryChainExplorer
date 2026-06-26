@@ -3,6 +3,6 @@ subject: pam4
 predicate: is_a
 object: technology
 statement: PAM4四电平脉冲幅度调制是高速光模块核心调制技术。
-citations: []
+citations: [gs_optical_2025]
 created_at: "2026-06-26"
 updated_at: "2026-06-26"

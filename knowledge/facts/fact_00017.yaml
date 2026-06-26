@@ -3,6 +3,6 @@ subject: pam3
 predicate: is_a
 object: technology
 statement: PAM3三电平脉冲幅度调制用于部分短距互连场景。
-citations: []
+citations: [gs_optical_2025]
 created_at: "2026-06-26"
 updated_at: "2026-06-26"

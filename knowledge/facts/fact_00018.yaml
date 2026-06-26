@@ -3,6 +3,6 @@ subject: fec
 predicate: is_a
 object: technology
 statement: FEC前向纠错是光模块传输纠错技术。
-citations: []
+citations: [gs_optical_2025]
 created_at: "2026-06-26"
 updated_at: "2026-06-26"

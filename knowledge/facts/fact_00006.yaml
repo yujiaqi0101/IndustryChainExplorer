@@ -3,6 +3,6 @@ subject: optical_module_1_6t
 predicate: is_a
 object: optical_module
 statement: 1.6T光模块是光模块的下一代规格。
-citations: []
+citations: [gs_optical_2025]
 created_at: "2026-06-26"
 updated_at: "2026-06-26"

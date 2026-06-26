@@ -3,6 +3,6 @@ subject: quartz
 predicate: is_a
 object: material
 statement: 石英是光器件基础材料。
-citations: []
+citations: [gs_optical_2025]
 created_at: "2026-06-26"
 updated_at: "2026-06-26"

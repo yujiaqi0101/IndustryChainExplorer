@@ -3,6 +3,6 @@ subject: switch
 predicate: is_a
 object: application
 statement: 交换机属于下游应用场景。
-citations: []
+citations: [gs_optical_2025]
 created_at: "2026-06-26"
 updated_at: "2026-06-26"
