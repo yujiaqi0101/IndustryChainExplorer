@@ -35,7 +35,7 @@ set "PORT=%~1"
 if "%PORT%"=="" set "PORT=8501"
 
 echo ==========================================
-echo   IndustryChainExplorer Frontend
+echo   Industry Knowledge OS Frontend
 echo ==========================================
 echo   Python : %PYTHON%
 echo   Dir    : %CD%

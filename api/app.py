@@ -114,7 +114,7 @@ def list_objects(
     kind: str | None = Query(None, description="Filter by kind (concept/organization/document)"),
     tag: str | None = Query(None, description="Filter by tag"),
 ) -> dict:
-    objects = list(repo.all_objects().values())
+    objects = repo.all_objects()
     if kind:
         objects = [o for o in objects if o.kind.value == kind]
     if tag:
@@ -129,9 +129,12 @@ def list_objects(
 def get_object(object_id: str) -> dict:
     obj = repo.get_object(object_id)
     if obj is None:
-        resolved = repo.resolve_id(object_id)
-        if resolved:
-            obj = repo.get_object(resolved)
+        obj = repo.get_object(object_id.lower())
+    if obj is None:
+        for alias_obj in repo.all_objects():
+            if object_id.lower() in [a.lower() for a in alias_obj.aliases]:
+                obj = alias_obj
+                break
     if obj is None:
         raise HTTPException(status_code=404, detail=f"Object not found: {object_id}")
 
@@ -156,7 +159,7 @@ def list_facts(
     subject: str | None = Query(None, description="Filter by subject ID"),
     object: str | None = Query(None, description="Filter by object ID"),
 ) -> dict:
-    facts = list(repo.all_facts().values())
+    facts = repo.all_facts()
     if predicate:
         facts = [f for f in facts if f.predicate == predicate]
     if subject:
@@ -184,10 +187,13 @@ def get_neighbors(
 ) -> dict:
     obj = repo.get_object(object_id)
     if obj is None:
-        resolved = repo.resolve_id(object_id)
-        if resolved:
-            obj = repo.get_object(resolved)
-            object_id = resolved
+        obj = repo.get_object(object_id.lower())
+    if obj is None:
+        for alias_obj in repo.all_objects():
+            if object_id.lower() in [a.lower() for a in alias_obj.aliases]:
+                obj = alias_obj
+                object_id = alias_obj.id
+                break
     if obj is None:
         raise HTTPException(status_code=404, detail=f"Object not found: {object_id}")
 
@@ -235,7 +241,7 @@ def list_packages() -> dict:
                     for layer in pkg.layers
                 ],
             }
-            for pkg in packages.values()
+            for pkg in packages
         ]
     }
 
@@ -246,6 +252,7 @@ def get_package(package_id: str) -> dict:
     if pkg is None:
         raise HTTPException(status_code=404, detail=f"Package not found: {package_id}")
 
+    all_objs = {o.id: o for o in repo.all_objects()}
     return {
         "id": pkg.id,
         "name": pkg.name,
@@ -259,7 +266,7 @@ def get_package(package_id: str) -> dict:
                 "categories": layer.categories,
                 "order": layer.order,
                 "object_ids": [
-                    oid for oid, obj in repo.all_objects().items()
+                    oid for oid, obj in all_objs.items()
                     if any(c in obj.tags for c in layer.categories)
                 ],
             }
