@@ -94,10 +94,12 @@ elif page == "🔍 搜索":
                         if obj.tags:
                             st.caption(f"标签: {', '.join(obj.tags)}")
 
-                        neighbor_count = len(repo.graph.neighbors(obj.id))
-                        if st.button(f"查看关联关系 ({neighbor_count})", key=f"view_{obj.id}"):
-                            st.session_state["selected_object"] = obj.id
-                            st.switch_page("ui/streamlit/app.py")
+                        neighbor_count = len(list(repo.graph.neighbors(obj.id)))
+                        with st.expander(f"查看关联关系 ({neighbor_count})"):
+                            for nbr, fact, outgoing in repo.graph.neighbors(obj.id):
+                                direction = "→" if outgoing else "←"
+                                st.write(f"{direction} **{fact.predicate}**: [{nbr.kind.value}] {nbr.name} (`{nbr.id}`)")
+                                st.caption(fact.statement)
         else:
             st.warning("未找到相关结果")
 
@@ -212,9 +214,14 @@ elif page == "📈 知识图谱":
             for src, tgt, pred, outgoing in filtered_edges:
                 src_obj = nodes[src]
                 tgt_obj = nodes[tgt]
-                arrow = "→" if outgoing else "←"
                 with st.container(border=True):
-                    st.markdown(f"[{src_obj.name}] {arrow} **[{pred}]** {arrow} [{tgt_obj.name}]")
+                    if outgoing:
+                        st.markdown(f"**{src_obj.name}** → *[{pred}]* → **{tgt_obj.name}**")
+                    else:
+                        st.markdown(f"**{tgt_obj.name}** → *[{pred}]* → **{src_obj.name}**")
+                    fact = next((f for n, f, o in repo.graph.neighbors(src) if n.id == tgt and f.predicate == pred), None)
+                    if fact and fact.statement:
+                        st.caption(fact.statement)
 
 elif page == "✅ 验证报告":
     st.header("✅ 知识库验证报告")
