@@ -1,8 +1,10 @@
 id: fact_00031
-subject: intel
+subject: guangxun_technology
 predicate: produce
-object: silicon_photonics_chip
-statement: Intel生产硅光芯片。
-citations: [intel_silicon_photonics_wp]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_chip
+statement: 光迅科技具备光电子芯片自研能力，是国内少数有芯片自研能力的光模块厂商。
+citations:
+  - ref_guangxun_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

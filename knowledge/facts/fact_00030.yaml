@@ -1,8 +1,10 @@
 id: fact_00030
-subject: huagong_tech
+subject: guangxun_technology
 predicate: produce
-object: vcsel
-statement: 华工科技生产VCSEL/激光器。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_module
+statement: 光迅科技生产光模块，是国内首家上市光电子器件公司。
+citations:
+  - ref_guangxun_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

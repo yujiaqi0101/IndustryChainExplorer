@@ -1,0 +1,11 @@
+id: optical_technology
+kind: concept
+name: 光技术
+aliases:
+  - Optical Technology
+summary: 光通信领域相关技术的统称，包括调制技术、封装技术、硅光技术等。
+tags:
+  - 光技术
+  - 技术
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

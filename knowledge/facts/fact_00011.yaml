@@ -1,8 +1,10 @@
 id: fact_00011
-subject: silicon_photonics_chip
+subject: silicon_photonics
 predicate: is_a
-object: component
-statement: 硅光芯片是下一代光模块核心集成器件。
-citations: [intel_silicon_photonics_wp]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_technology
+statement: 硅光技术是光通信技术路线，利用硅材料实现光电器件集成。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

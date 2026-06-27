@@ -1,8 +1,10 @@
 id: fact_00047
-subject: silicon_photonics_chip
-predicate: related_to
-object: silicon_photonics
-statement: 硅光芯片是硅光技术的载体。
-citations: [intel_silicon_photonics_wp]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: ceramic_sleeve
+predicate: supply
+object: optical_passive_component
+statement: 陶瓷套管是无源光器件的核心组件。
+citations:
+  - ref_tianfu_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

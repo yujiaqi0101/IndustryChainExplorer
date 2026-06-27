@@ -1,0 +1,15 @@
+id: google
+kind: organization
+name: Google
+aliases:
+  - Alphabet
+  - 谷歌
+summary: 全球最大云服务商之一，AI算力基础设施投资巨头，光模块核心大客户。
+organization_type: company
+tags:
+  - 云厂商
+  - AI
+  - 下游客户
+  - 海外
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

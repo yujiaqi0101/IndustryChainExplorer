@@ -1,8 +1,10 @@
 id: fact_00015
-subject: quartz
+subject: ai_data_center
 predicate: is_a
-object: material
-statement: 石英是光器件基础材料。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: application
+statement: AI数据中心是光模块最大的下游应用场景。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

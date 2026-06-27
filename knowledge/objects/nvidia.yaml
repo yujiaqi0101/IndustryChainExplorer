@@ -1,0 +1,15 @@
+id: nvidia
+kind: organization
+name: NVIDIA
+aliases:
+  - 英伟达
+summary: GPU龙头，AI算力芯片核心供应商，光模块下游重要客户，推动800G/1.6T光模块需求。
+organization_type: company
+tags:
+  - GPU
+  - AI
+  - 下游客户
+  - 英伟达
+  - 海外
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

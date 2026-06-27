@@ -1,7 +1,11 @@
 id: application
 kind: concept
-name: 应用
-summary: 产业链下游应用场景。
-tags: [分类]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+name: 应用场景
+aliases:
+  - Application
+summary: 光模块产品的下游应用场景，包括AI数据中心、电信网络等。
+tags:
+  - 应用
+  - 下游
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

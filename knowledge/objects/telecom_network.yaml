@@ -1,0 +1,16 @@
+id: telecom_network
+kind: concept
+name: 电信网络
+aliases:
+  - Telecommunication Network
+  - 电信传输
+summary: 传统电信传输与无线网络中的光通信网络，包括前传、中传、回传等场景。
+tags:
+  - 电信
+  - 5G
+  - 前传
+  - 中传
+  - 回传
+  - 下游应用
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

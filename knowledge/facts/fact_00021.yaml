@@ -1,8 +1,10 @@
 id: fact_00021
-subject: vcsel
+subject: optical_assembly
 predicate: supply
 object: optical_module
-statement: VCSEL供应给光模块，用于短距光模块。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+statement: 光收发组件（OSA）供应给光模块进行最终封装。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

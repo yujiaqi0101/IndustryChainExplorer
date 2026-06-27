@@ -1,0 +1,15 @@
+id: fabrinet
+kind: organization
+name: Fabrinet
+aliases:
+  - Fabrinet Corporation
+  - 伟创力光电
+summary: 全球最大光模块EMS代工商，为多家光模块厂商提供封装代工服务，是光模块产业链重要制造环节。
+organization_type: company
+tags:
+  - 封装代工
+  - EMS
+  - 制造
+  - 海外
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

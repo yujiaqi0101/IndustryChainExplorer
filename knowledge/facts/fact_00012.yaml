@@ -1,8 +1,10 @@
 id: fact_00012
-subject: silicon_photonics
+subject: cpo
 predicate: is_a
-object: technology
-statement: 硅光是硅基光电子集成技术。
-citations: [intel_silicon_photonics_wp]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_technology
+statement: CPO是光电共封装技术，将光引擎与交换芯片共封装。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

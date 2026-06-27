@@ -1,0 +1,13 @@
+id: pd_chip
+kind: concept
+name: 光电探测器芯片
+aliases:
+  - Photodetector
+  - PD芯片
+summary: 将光信号转换为电信号的核心光芯片，是光模块受光端的关键器件。
+tags:
+  - PD
+  - 光电探测器
+  - 受光芯片
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

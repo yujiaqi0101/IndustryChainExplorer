@@ -1,0 +1,14 @@
+id: electronic_chip
+kind: concept
+name: 电芯片
+aliases:
+  - Electronic Chip
+  - 电信号处理芯片
+summary: 光模块中的信号处理芯片，包括DSP、Driver等，实现电信号的调制与解调。
+tags:
+  - 电芯片
+  - 信号处理
+  - 核心元器件
+  - 卡脖子环节
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

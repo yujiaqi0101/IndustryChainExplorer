@@ -1,8 +1,10 @@
 id: fact_00018
-subject: fec
-predicate: is_a
-object: technology
-statement: FEC前向纠错是光模块传输纠错技术。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: optical_chip
+predicate: supply
+object: optical_assembly
+statement: 光芯片供应给光收发组件（OSA）进行封装集成。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

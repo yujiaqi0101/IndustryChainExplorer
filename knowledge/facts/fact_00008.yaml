@@ -1,8 +1,10 @@
 id: fact_00008
-subject: dsp
+subject: optical_passive_component
 predicate: is_a
-object: component
-statement: DSP数字信号处理器是光模块核心芯片器件。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_component
+statement: 无源光器件属于光器件，包括陶瓷套管、光纤适配器、隔离器等。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

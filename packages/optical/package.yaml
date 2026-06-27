@@ -1,9 +1,11 @@
 id: optical
 name: 光模块产业链
 version: "2.0.0"
-description: 光模块是光通信核心器件，实现光电信号转换。本产业包覆盖光模块完整价值链，从上游材料/器件到下游AI服务器/数据中心应用。
+description: 光模块是光通信核心器件，实现光电信号转换。本产业包覆盖光模块完整价值链，从上游光芯片/电芯片/光器件到中游模块封装制造，再到下游AI数据中心/电信网络应用。全球格局呈现"中国主导制造、美日把控芯片"态势。
 entry_points:
   - optical_module
+  - zhongji_innolight
+  - tianfu_communication
 default_layout: layered
 theme: blue
 keywords:
@@ -14,24 +16,50 @@ keywords:
   - 1.6T
   - 光模块
   - 硅光
+  - CPO
+  - 光芯片
+  - DSP
 layers:
   - id: application
     name: 应用层
-    categories: [ai_infra, application]
+    categories:
+      - data_center
+      - ai_infra
+      - application
+      - telecommunication
     order: 4
   - id: product
     name: 产品层
-    categories: [product]
+    categories:
+      - optical_module
+      - product
     order: 3
   - id: component
     name: 器件层
-    categories: [component]
+    categories:
+      - component
+      - optical_component
+      - optoelectronic_chip
+      - laser_chip
+      - photodetector_chip
+      - electronic_component
+      - dsp_chip
+      - driver_chip
+      - passive_component
+      - optical_passive_component
     order: 2
   - id: material
     name: 材料层
-    categories: [material]
+    categories:
+      - material
+      - semiconductor_material
+      - optical_material
     order: 1
   - id: technology
     name: 技术层
-    categories: [technology]
+    categories:
+      - technology
+      - optical_technology
+      - optical_chip_technology
+      - electronic_chip_technology
     order: 0

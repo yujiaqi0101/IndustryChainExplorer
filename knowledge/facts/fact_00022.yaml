@@ -1,8 +1,10 @@
 id: fact_00022
-subject: pcb
-predicate: supply
-object: optical_module
-statement: PCB是光模块基板材料。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: optical_module
+predicate: apply_to
+object: ai_data_center
+statement: 光模块应用于AI数据中心，支撑大模型训练和推理。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

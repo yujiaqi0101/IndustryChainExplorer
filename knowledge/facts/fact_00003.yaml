@@ -1,8 +1,10 @@
 id: fact_00003
-subject: switch
+subject: electronic_chip
 predicate: is_a
-object: application
-statement: 交换机属于下游应用场景。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: electronic_component
+statement: 电芯片属于电学器件，是光模块信号处理的核心组件。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

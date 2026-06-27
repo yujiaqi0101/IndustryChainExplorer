@@ -1,8 +1,10 @@
 id: fact_00006
-subject: optical_module_1_6t
+subject: vcsel
 predicate: is_a
-object: optical_module
-statement: 1.6T光模块是光模块的下一代规格。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_chip
+statement: VCSEL芯片是短距离光模块常用的发光光芯片。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

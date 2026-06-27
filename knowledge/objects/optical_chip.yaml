@@ -1,0 +1,14 @@
+id: optical_chip
+kind: concept
+name: 光芯片
+aliases:
+  - Optical Chip
+  - 光电子芯片
+summary: 光模块核心元器件，实现光电转换中的发光或受光功能，占光器件成本的50%。
+tags:
+  - 光芯片
+  - 发光芯片
+  - 核心元器件
+  - 价值链核心
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

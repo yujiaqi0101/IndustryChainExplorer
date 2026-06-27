@@ -1,8 +1,10 @@
 id: fact_00023
-subject: silicon_photonics_chip
-predicate: supply
-object: optical_module
-statement: 硅光芯片是下一代光模块方向。
-citations: [intel_silicon_photonics_wp]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: optical_module
+predicate: apply_to
+object: ai_cluster
+statement: 光模块应用于AI算力集群，实现GPU间高速互联。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

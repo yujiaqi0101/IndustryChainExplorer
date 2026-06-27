@@ -1,8 +1,10 @@
 id: fact_00013
-subject: silicon_wafer
+subject: lpo
 predicate: is_a
-object: material
-statement: 硅片是半导体芯片制造的基础材料。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_technology
+statement: LPO是无DSP芯片的线性驱动可插拔光学技术路线。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

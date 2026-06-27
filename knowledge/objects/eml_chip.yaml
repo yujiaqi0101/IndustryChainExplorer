@@ -1,0 +1,15 @@
+id: eml_chip
+kind: concept
+name: EML芯片
+aliases:
+  - Electro-Absorption Modulated Laser
+  - 电吸收调制激光器芯片
+summary: 高速率光模块核心发光芯片，800G及以上速率主流方案，技术壁垒极高。
+tags:
+  - EML
+  - 发光芯片
+  - 高速率
+  - 高端
+  - 垄断
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

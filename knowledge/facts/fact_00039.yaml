@@ -1,8 +1,10 @@
 id: fact_00039
-subject: ai_server
-predicate: use
-object: optical_module
-statement: AI服务器GPU互联需要高速光模块。
-citations: [gs_optical_2025, nvidia_2024_annual]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: sumitomo
+predicate: supply
+object: optical_chip
+statement: 住友电工供应光芯片和光通信器件。
+citations:
+  - ref_optical_module_overview
+weight: 0.8
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

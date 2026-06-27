@@ -1,8 +1,10 @@
 id: fact_00024
-subject: tf_comm
-predicate: supply
-object: zhongji_innolight
-statement: 天孚通信光器件封装上游供应中际旭创。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: optical_module
+predicate: apply_to
+object: telecom_network
+statement: 光模块应用于电信网络，包括5G前传、中传、回传。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

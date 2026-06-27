@@ -1,0 +1,13 @@
+id: driver_chip
+kind: concept
+name: 驱动芯片
+aliases:
+  - Driver IC
+  - 激光驱动芯片
+summary: 用于驱动激光器芯片的模拟前端芯片，实现电信号到激光强度的调制。
+tags:
+  - Driver
+  - 激光驱动
+  - 模拟前端
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

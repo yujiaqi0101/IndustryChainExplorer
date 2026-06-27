@@ -1,0 +1,14 @@
+id: lens_array
+kind: concept
+name: 光纤透镜阵列
+aliases:
+  - Lens Array
+  - LENS ARRAY
+  - 光线阵列
+summary: 用于光纤与芯片间高效耦合的微光学元件，天孚通信FAU光线阵列为核心技术平台之一。
+tags:
+  - 透镜阵列
+  - 微光学
+  - 耦合
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

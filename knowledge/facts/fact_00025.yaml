@@ -1,8 +1,10 @@
 id: fact_00025
-subject: marvell
+subject: zhongji_innolight
 predicate: produce
-object: dsp
-statement: Marvell生产DSP芯片。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_module
+statement: 中际旭创生产光模块，是全球龙头，800G/1.6T领先。
+citations:
+  - ref_zhongji_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

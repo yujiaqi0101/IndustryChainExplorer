@@ -1,7 +1,0 @@
-id: ai_infra
-kind: concept
-name: AI基础设施
-summary: 支撑人工智能训练和推理的硬件与软件基础设施，包括服务器、网络、存储等。
-tags: [AI, 算力, 产业]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"

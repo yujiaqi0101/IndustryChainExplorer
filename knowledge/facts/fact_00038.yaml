@@ -1,8 +1,10 @@
 id: fact_00038
-subject: fii
-predicate: produce
-object: ai_server
-statement: 工业富联代工AI服务器。
-citations: [nvidia_2024_annual]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: broadcom
+predicate: supply
+object: dsp_chip
+statement: Broadcom供应DSP芯片，与Marvell合计占90%以上份额。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

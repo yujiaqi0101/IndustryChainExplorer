@@ -2,11 +2,16 @@ id: coherent
 kind: organization
 name: Coherent
 aliases:
-  - Coherent Corp.
-summary: 海外光器件公司，EML激光器供应商。
+  - Coherent Corporation
+  - 高意
+summary: 美国光芯片龙头，提供EML、PD等高端光电子芯片，光模块上游核心供应商。
 organization_type: company
-code: COHR
-market: US
-tags: [激光器, EML, 海外, 光器件]
-created_at: "2026-01-01"
-updated_at: "2026-06-26"
+tags:
+  - 光芯片
+  - EML
+  - PD
+  - 美国
+  - 垄断
+  - 上游
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

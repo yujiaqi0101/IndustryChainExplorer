@@ -1,0 +1,14 @@
+id: ai_data_center
+kind: concept
+name: AI数据中心
+aliases:
+  - AI Data Center
+  - 智算中心
+summary: 为AI大模型训练和推理提供算力的数据中心基础设施，是光模块最大的下游应用场景。
+tags:
+  - AI
+  - 数据中心
+  - 算力
+  - 下游应用
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

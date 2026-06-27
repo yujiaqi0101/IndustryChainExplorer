@@ -1,8 +1,10 @@
 id: fact_00002
-subject: data_center
+subject: optical_chip
 predicate: is_a
-object: application
-statement: 数据中心属于下游应用场景。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_component
+statement: 光芯片属于光器件，是光模块成本占比最高的核心元器件。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

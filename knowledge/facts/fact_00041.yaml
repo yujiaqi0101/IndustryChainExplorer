@@ -1,8 +1,10 @@
 id: fact_00041
-subject: optical_module_800g
-predicate: use
-object: dsp
-statement: 800G光模块使用DSP芯片。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: dongshan_pcb
+predicate: supply
+object: source_photonics
+statement: 东山精密收购索尔思光电，布局光模块制造。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

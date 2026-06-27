@@ -3,10 +3,16 @@ kind: organization
 name: Lumentum
 aliases:
   - Lumentum Holdings
-summary: 海外光器件公司，EML激光器核心供应商。
+  - 卢森图姆
+summary: 美国高端光芯片龙头，主导EML/VCSEL等高速发光芯片技术与产能，光模块上游核心供应商。
 organization_type: company
-code: LITE
-market: US
-tags: [激光器, EML, 海外, 光器件]
-created_at: "2026-01-01"
-updated_at: "2026-06-26"
+tags:
+  - 光芯片
+  - EML
+  - VCSEL
+  - 发光芯片
+  - 美国
+  - 垄断
+  - 上游
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

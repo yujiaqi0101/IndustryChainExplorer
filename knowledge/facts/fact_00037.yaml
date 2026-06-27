@@ -1,8 +1,10 @@
 id: fact_00037
-subject: inspur
-predicate: produce
-object: ai_server
-statement: 浪潮信息生产AI服务器。
-citations: [nvidia_2024_annual]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: marvell
+predicate: supply
+object: dsp_chip
+statement: Marvell供应DSP芯片，全球高端光模块DSP份额第一。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

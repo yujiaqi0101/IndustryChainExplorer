@@ -1,0 +1,15 @@
+id: sumitomo
+kind: organization
+name: 住友电工
+aliases:
+  - Sumitomo Electric
+  - 住友电工集团
+summary: 日本光芯片与光通信器件龙头，在高端光芯片和光纤技术领域具备领先优势。
+organization_type: company
+tags:
+  - 光芯片
+  - 日本
+  - 光纤
+  - 上游
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

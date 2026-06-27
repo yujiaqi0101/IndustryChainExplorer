@@ -1,0 +1,18 @@
+id: yuangjie
+kind: organization
+name: 源杰科技
+aliases:
+  - Yuanjie Technology
+  - 上海源杰半导体
+summary: 国内光芯片领军企业，在100G及以下速率EML芯片已实现突破，200G超高速EML处于送样验证阶段。
+organization_type: company
+code: "688498"
+market: SH
+tags:
+  - 光芯片
+  - EML
+  - 国产替代
+  - 国产芯片
+  - 上游
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

@@ -1,0 +1,10 @@
+id: fact_00052
+subject: mux_demux
+predicate: supply
+object: optical_passive_component
+statement: Mux/Demux是波分复用系统中的无源器件。
+citations:
+  - ref_tianfu_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

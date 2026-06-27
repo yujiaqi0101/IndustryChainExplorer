@@ -1,8 +1,10 @@
 id: fact_00026
-subject: broadcom
+subject: xin_yisheng
 predicate: produce
-object: dsp
-statement: Broadcom生产DSP芯片。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_module
+statement: 新易盛生产光模块，具备全系列800G/400G/1.6T量产能力。
+citations:
+  - ref_xinyisheng_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

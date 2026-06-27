@@ -1,8 +1,10 @@
 id: fact_00035
-subject: accelink
-predicate: produce
-object: optical_module_800g
-statement: 光迅科技生产800G光模块。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: lumentum
+predicate: supply
+object: eml_chip
+statement: Lumentum供应EML发光芯片，是全球高端光芯片龙头。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

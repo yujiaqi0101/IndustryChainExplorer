@@ -1,8 +1,10 @@
 id: fact_00019
-subject: dsp
+subject: electronic_chip
 predicate: supply
-object: optical_module
-statement: DSP芯片供应给光模块，是光模块核心芯片。
-citations: [gs_optical_2025, zjxc_2024_annual]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_assembly
+statement: 电芯片（DSP、Driver等）供应给光收发组件（OSA）进行封装集成。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

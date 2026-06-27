@@ -1,0 +1,14 @@
+id: optical_engine
+kind: concept
+name: 光引擎
+aliases:
+  - Optical Engine
+  - 1.6T光引擎
+summary: 高速光模块核心集成模块，将光芯片、电芯片及光学元件高度集成，1.6T时代价值量大幅提升。
+tags:
+  - 光引擎
+  - 高速
+  - 1.6T
+  - 光模块
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

@@ -3,7 +3,12 @@ kind: concept
 name: 硅光技术
 aliases:
   - Silicon Photonics
-summary: 硅基光电子集成技术，利用CMOS硅工艺实现光器件集成，是光通信重要技术方向。
-tags: [硅光, 技术]
-created_at: "2026-01-01"
-updated_at: "2026-06-26"
+  - SiPh
+summary: 利用硅材料实现光电器件集成的技术路线，可显著降低成本和功耗，是下一代光互联的关键方向。
+tags:
+  - 硅光
+  - 新技术
+  - 集成
+  - 低功耗
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

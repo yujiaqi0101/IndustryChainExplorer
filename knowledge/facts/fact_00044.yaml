@@ -1,8 +1,10 @@
 id: fact_00044
-subject: optical_module_1_6t
-predicate: use
-object: silicon_photonics_chip
-statement: 1.6T光模块使用硅光芯片技术。
-citations: [intel_silicon_photonics_wp]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: xin_yisheng
+predicate: supply
+object: google
+statement: 新易盛供应Google等海外云厂商光模块。
+citations:
+  - ref_xinyisheng_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

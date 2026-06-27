@@ -1,0 +1,14 @@
+id: lpo
+kind: concept
+name: LPO
+aliases:
+  - Linear Drive Pluggable Optics
+  - 线性驱动可插拔光学
+summary: 去除DSP芯片的线性驱动可插拔光模块方案，降低功耗和成本，是800G/1.6T的技术路线之一。
+tags:
+  - LPO
+  - 新技术
+  - 无DSP
+  - 低功耗
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

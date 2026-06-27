@@ -4,125 +4,64 @@ predicates:
     subject: [concept, organization, document]
     object: [concept]
     inverse: has_instance
-
-  has_instance:
-    name: 包含实例
-    subject: [concept]
-    object: [concept, organization, document]
-    inverse: is_a
-
   part_of:
     name: 是...的一部分
     subject: [concept]
     object: [concept]
     inverse: contains
-
-  contains:
-    name: 包含
-    subject: [concept]
-    object: [concept]
-    inverse: part_of
-
   produce:
     name: 生产
     subject: [organization]
     object: [concept]
     inverse: produced_by
-
-  produced_by:
-    name: 由...生产
-    subject: [concept]
-    object: [organization]
-    inverse: produce
-
   supply:
     name: 供应
     subject: [concept, organization]
     object: [concept, organization]
     inverse: supplied_by
-
-  supplied_by:
-    name: 由...供应
-    subject: [concept, organization]
-    object: [concept, organization]
-    inverse: supply
-
   use:
     name: 使用
-    subject: [concept, organization]
+    subject: [organization, concept]
     object: [concept]
     inverse: used_by
-
-  used_by:
-    name: 被...使用
-    subject: [concept]
-    object: [concept, organization]
-    inverse: use
-
   apply_to:
     name: 应用于
     subject: [concept]
     object: [concept]
     inverse: applies
-
-  applies:
-    name: 应用
-    subject: [concept]
-    object: [concept]
-    inverse: apply_to
-
   replace:
     name: 替代
     subject: [concept]
     object: [concept]
     inverse: replaced_by
-
-  replaced_by:
-    name: 被...替代
-    subject: [concept]
-    object: [concept]
-    inverse: replace
-
   compete_with:
     name: 与...竞争
     subject: [concept, organization]
     object: [concept, organization]
     symmetric: true
-
   depends_on:
     name: 依赖
-    subject: [concept]
-    object: [concept]
-
+    subject: [organization, concept]
+    object: [concept, organization]
   defined_by:
     name: 由...定义
     subject: [concept]
     object: [document]
-
   published_by:
     name: 由...发布
     subject: [document]
     object: [organization]
-
   research_on:
     name: 研究
     subject: [organization]
     object: [concept]
-
   related_to:
     name: 相关
-    subject: [concept, organization, document]
-    object: [concept, organization, document]
+    subject: [concept, organization]
+    object: [concept, organization]
     symmetric: true
-
   integrate:
     name: 集成
     subject: [concept]
     object: [concept]
     inverse: integrated_in
-
-  integrated_in:
-    name: 被集成到
-    subject: [concept]
-    object: [concept]
-    inverse: integrate

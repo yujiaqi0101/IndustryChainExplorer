@@ -1,0 +1,17 @@
+id: huake_technology
+kind: organization
+name: 华工科技
+aliases:
+  - HG Tech
+  - 华工科技产业股份有限公司
+summary: 国内光模块重要供应商，400G/800G光模块产品布局完善，深度参与AI算力网络建设。
+organization_type: company
+code: "000988"
+market: SZ
+tags:
+  - 光模块
+  - 400G
+  - 800G
+  - AI算力
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

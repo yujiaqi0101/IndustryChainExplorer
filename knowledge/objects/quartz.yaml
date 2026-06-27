@@ -1,9 +1,0 @@
-id: quartz
-kind: concept
-name: 石英
-aliases:
-  - Quartz
-summary: 石英材料，光器件（如滤波器、透镜）的基础材料。
-tags: [材料, 石英, 光器件]
-created_at: "2026-01-01"
-updated_at: "2026-06-26"

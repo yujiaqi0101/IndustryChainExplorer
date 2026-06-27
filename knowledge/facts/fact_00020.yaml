@@ -1,8 +1,10 @@
 id: fact_00020
-subject: eml_laser
+subject: optical_passive_component
 predicate: supply
-object: optical_module
-statement: EML激光器供应给光模块，是高速光模块核心光源。
-citations: [zjxc_2024_annual]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_assembly
+statement: 无源光器件（陶瓷套管、隔离器等）供应给光收发组件（OSA）进行集成。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

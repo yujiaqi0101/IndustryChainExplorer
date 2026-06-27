@@ -1,8 +1,10 @@
 id: fact_00040
-subject: switch
-predicate: use
-object: optical_module
-statement: 交换机端口使用光模块实现互联。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: yuangjie
+predicate: supply
+object: eml_chip
+statement: 源杰科技供应EML光芯片，国内领先，200G EML处于验证阶段。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

@@ -1,0 +1,10 @@
+id: fact_00056
+subject: silicon_photonics
+predicate: apply_to
+object: optical_module
+statement: 硅光技术应用于光模块，可降低成本和功耗。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

@@ -1,8 +1,10 @@
 id: fact_00016
-subject: pam4
+subject: ai_cluster
 predicate: is_a
-object: technology
-statement: PAM4四电平脉冲幅度调制是高速光模块核心调制技术。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: application
+statement: AI算力集群是光模块的核心下游应用，需要高速光模块实现GPU互联。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

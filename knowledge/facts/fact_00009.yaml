@@ -1,8 +1,10 @@
 id: fact_00009
-subject: eml_laser
+subject: optical_assembly
 predicate: is_a
-object: component
-statement: EML激光器是光模块核心光源器件。
-citations: [zjxc_2024_annual]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_component
+statement: 光收发组件（OSA）是光模块内部核心组件，集成光芯片、电芯片和无源器件。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

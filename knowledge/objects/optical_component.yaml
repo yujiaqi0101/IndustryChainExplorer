@@ -1,0 +1,12 @@
+id: optical_component
+kind: concept
+name: 光器件
+aliases:
+  - Optical Component
+summary: 光模块中用于处理光信号的各类器件的统称，包括光芯片、光引擎、光组件等。
+tags:
+  - 光器件
+  - 器件
+  - 光模块
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

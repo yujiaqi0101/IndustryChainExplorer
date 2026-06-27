@@ -1,0 +1,14 @@
+id: dsp_chip
+kind: concept
+name: DSP芯片
+aliases:
+  - Digital Signal Processor
+  - 数字信号处理器
+summary: 高端光模块核心DSP芯片，用于信号修复，全球90%以上份额被Marvell和Broadcom垄断。
+tags:
+  - DSP
+  - 信号处理
+  - 垄断
+  - 卡脖子
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

@@ -1,8 +1,10 @@
 id: fact_00049
-subject: optical_module
-predicate: part_of
-object: optical_communication
-statement: 光模块是光通信产业的核心器件。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+subject: mpo_connector
+predicate: supply
+object: optical_passive_component
+statement: MPO连接器是无源光器件的一种高密度连接器。
+citations:
+  - ref_tianfu_company
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

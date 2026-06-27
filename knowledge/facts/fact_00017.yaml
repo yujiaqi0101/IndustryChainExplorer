@@ -1,8 +1,10 @@
 id: fact_00017
-subject: pam3
+subject: telecom_network
 predicate: is_a
-object: technology
-statement: PAM3三电平脉冲幅度调制用于部分短距互连场景。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: application
+statement: 电信网络是光模块的传统下游应用领域。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

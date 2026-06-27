@@ -1,8 +1,10 @@
 id: fact_00004
-subject: optical_module
+subject: dsp_chip
 predicate: is_a
-object: product
-statement: 光模块属于光通信产业链核心产品。
-citations: [gs_optical_2025]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: electronic_chip
+statement: DSP芯片是电芯片的核心类型，用于光模块信号修复。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

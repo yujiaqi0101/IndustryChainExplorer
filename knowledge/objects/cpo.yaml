@@ -3,8 +3,13 @@ kind: concept
 name: CPO
 aliases:
   - Co-Packaged Optics
-  - 共封装光学
-summary: 共封装光学技术，将光引擎与交换芯片共封装，是下一代光互连方向。
-tags: [CPO, 硅光, 技术, 下一代]
-created_at: "2026-01-01"
-updated_at: "2026-06-26"
+  - 光电共封装
+summary: 将光引擎与交换芯片共封装在同一基板上的新一代架构，降低功耗和信号损耗，是未来超高速互联的重要方向。
+tags:
+  - CPO
+  - 共封装
+  - 新技术
+  - 低功耗
+  - 未来架构
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

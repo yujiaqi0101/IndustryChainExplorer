@@ -1,0 +1,14 @@
+id: optical_passive_component
+kind: concept
+name: 无源光器件
+aliases:
+  - Passive Optical Component
+  - 无源器件
+summary: 光通信中不依赖光电转换的器件，包括光纤连接器、耦合器、隔离器等，天孚通信为核心供应商。
+tags:
+  - 无源器件
+  - 光连接器
+  - 陶瓷套管
+  - 光无源
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

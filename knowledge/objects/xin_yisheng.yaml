@@ -1,0 +1,19 @@
+id: xin_yisheng
+kind: organization
+name: 新易盛
+aliases:
+  - Eoptolink
+  - 成都新易盛通信技术股份有限公司
+summary: 全球高速光互联创新者，全系列800G/400G/1.6T可插拔光模块量产能力，深度绑定海外云巨头。
+organization_type: company
+code: "300502"
+market: SZ
+tags:
+  - 光模块
+  - 800G
+  - 1.6T
+  - 海外
+  - 英伟达
+  - 谷歌
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

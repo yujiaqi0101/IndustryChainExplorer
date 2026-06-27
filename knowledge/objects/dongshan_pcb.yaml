@@ -1,0 +1,14 @@
+id: dongshan_pcb
+kind: organization
+name: 东山精密
+aliases:
+  - DFS
+  - 东山精密股份有限公司
+summary: 中国电子制造企业，收购索尔思光电，布局光模块领域。
+organization_type: company
+tags:
+  - 光模块
+  - 并购
+  - 国内
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

@@ -1,8 +1,10 @@
 id: fact_00007
-subject: cpo
+subject: pd_chip
 predicate: is_a
-object: technology
-statement: CPO（共封装光学）是下一代光互连技术。
-citations: [intel_silicon_photonics_wp]
-created_at: "2026-06-26"
-updated_at: "2026-06-26"
+object: optical_chip
+statement: 光电探测器芯片是光模块的受光端光芯片。
+citations:
+  - ref_optical_module_overview
+weight: 1.0
+created_at: "2026-06-27"
+updated_at: "2026-06-27"

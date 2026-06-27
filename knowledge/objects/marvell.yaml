@@ -3,10 +3,15 @@ kind: organization
 name: Marvell
 aliases:
   - Marvell Technology
-summary: 海外半导体公司，DSP芯片核心供应商。
+  - 美满电子
+summary: 美国DSP芯片巨头，全球高端光模块DSP芯片市场份额第一，与Broadcom合计占90%以上份额。
 organization_type: company
-code: MRVL
-market: US
-tags: [DSP, 芯片, 海外, 半导体]
-created_at: "2026-01-01"
-updated_at: "2026-06-26"
+tags:
+  - DSP
+  - 电芯片
+  - 垄断
+  - 卡脖子
+  - 美国
+  - 上游
+created_at: "2026-06-27"
+updated_at: "2026-06-27"
